@@ -1,0 +1,16 @@
+[submodule "libcommon/dtk/dojo"]
+	path = libcommon/dtk/dojo
+	url = https://github.com/dojo/dojo.git
+	branch = 1.9
+[submodule "libcommon/dtk/dijit"]
+	path = libcommon/dtk/dijit
+	url = https://github.com/dojo/dijit.git
+	branch = 1.9
+[submodule "libcommon/dtk/dojox"]
+	path = libcommon/dtk/dojox
+	url = https://github.com/dojo/dojox.git
+	branch = 1.9
+[submodule "libcommon/dtk/util"]
+	path = libcommon/dtk/util
+	url = https://github.com/dojo/util.git
+	branch = 1.9
