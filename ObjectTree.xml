@@ -10,6 +10,8 @@
 
 
 <root name="root Object Tree">
+    <data name="Data model">
+
 	<AA name="AA Sample objects" >
 		<BB name="BB folder" >
 			<CC name="CC leaf" />
@@ -49,6 +51,15 @@
 			</permissions>
 		</userManagement>
 	</AA>
+    </data>
+    <pageFlow name="Pages flow">
+        <page name="Dashboard" >
+            <page name="Object view">
+                    <page name="Object View"/>
+                    <page name="Object Properties"/>
+            </page>
+        </page>
+    </pageFlow>
 	<pages name="Pages" description="Pages list">
 		<dashboard	name="dashboard"	description="Dashboard page is default UI for user" />
 	</pages>
@@ -57,11 +68,59 @@
 		<us name="en-us" description="english USA"/>
 	</locales>
 	<images name="Images" >
-		<img name="Tiger" src="http://croczilla.com/bits_and_pieces/svg/samples/tiger/tiger.svg" description="Tiger" />
+		<img name="Tiger" src="http://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg" description="Tiger" >
+            <img name="icon" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Ghostscript_Tiger.svg/200px-Ghostscript_Tiger.svg.png"    />
+            <img name="thumb" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Ghostscript_Tiger.svg/500px-Ghostscript_Tiger.svg.png"    />
+        </img>
+
 	</images>
 	<uiRoles name="UI roles" >
 		<developer	name="Developer"		description="UI designer and front-end developer"		/>
 		<web		name="Admin"			description="Web admin"	/>
 		<user		name="User"				description="End user"		/>
 	</uiRoles>
+    <uiThemes name="UI Themes">
+        <theme name="Base components">
+            <theme name="Aero">
+                <theme name="Desktop"/>
+                <theme name="Android">
+                    <theme name="1080p landscape"/>
+                    <theme name="720p portraight"/>
+                    <theme name="Samsung Note 2 halfscreen"/>
+                    <theme name="GoogleTV"/>
+                </theme>
+            </theme>
+            <theme name="Aero Printer"></theme>
+            <theme name="IOS">
+                <theme name="iPad"/>
+                <theme name="iPhone"/>
+            </theme>
+        </theme>
+    </uiThemes>
+    <uiTypes name="">
+        <formElements name="Form Elements">
+            <input name="text"/>
+            <input name="radio"/>
+            <input name="checkbox"/>
+        </formElements>
+        <image name="Image">
+            <image name="full"/>
+            <image name="icon"/>
+            <image name="thumb"/>
+        </image>
+        <uiWidgets name="UI Widgets">
+            <layouts name="layouts">
+                <layout name="Vertical splitter"/>
+                <layout name="Horizontal Splitter"/>
+            </layouts>
+            <containers name="Containers">
+                <container name="AccordionTree"/>
+                <container name="TabContainer"/>
+                <container name="dijit/form/Form"/>
+                <container name="Fieldset"/>
+
+            </containers>
+        </uiWidgets>
+    </uiTypes>
+
 </root>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title title="Navigate and edit objects tree" >Objects Properties</title>
+        <link rel="stylesheet" href="/dojo1.6/dojo/resources/dojo.css" media="screen"		/>
+        <link rel="stylesheet" href="/dojo1.6/dijit/themes/claro/claro.css" media="screen"	/>
+        <link rel="stylesheet" href="style.css" media="screen"								/>
+        <script src="/dojo1.6/dojo/dojo.js"
+                data-dojo-config="isDebug: true,parseOnLoad: true">
+        </script>
+ 		<script>
+			dojo.require("dijit.layout.ContentPane");
+			dojo.require("dijit.layout.TabContainer");
+		</script>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body class="claro" >
+<div style="width: 100%; height: 160px">
+    <div dojoType="dijit.layout.TabContainer" style="width: 100%; height: 100%;">
+        <div dojoType="dijit.layout.ContentPane" title="My first tab" selected="true">
+<div style="width: 350px; height: 100px">
+    <div dojoType="dijit.layout.TabContainer" style="width: 100%; height: 100%;">
+        <div dojoType="dijit.layout.ContentPane" title="My first tab" selected="true">
+100% fit to container GRID will be here
+        </div>
+        <div dojoType="dijit.layout.ContentPane" title="My second tab">
+            Lorem ipsum and all around - second...
+        </div>
+        <div dojoType="dijit.layout.ContentPane" title="My last tab" closable="true">
+            Lorem ipsum and all around - last...
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div dojoType="dijit.layout.ContentPane" title="My second tab">
+            Lorem ipsum and all around - second...
+        </div>
+        <div dojoType="dijit.layout.ContentPane" title="My last tab" closable="true">
+            Lorem ipsum and all around - last...
+        </div>
+    </div>
+</div>
+	</body>
+</html>

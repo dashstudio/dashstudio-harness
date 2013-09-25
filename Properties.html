@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title title="Navigate and edit objects tree" >Objects Properties</title>
+        <style type="text/css">
+            @import "libcommon/DTK/dijit/themes/claro/claro.css";
+            @import "style.css";
+        </style>
+        <script type="text/javascript"	src="libcommon/DTK/dojo/dojo.js"
+                data-dojo-config="async:1, isDebug:1, parseOnLoad: true,paths:{ lib: '../../../lib' }"
+                ></script>
+		<script>
+			require(["dojo/parser","dijit/tree/TreeStoreModel","dojox/data/XmlStore","dijit/form/Form","dijit/form/Button","dijit/form/ValidationTextBox","dijit/form/DateTextBox"]);
+		</script>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body class="claro" >
+		
+<div dojoType="dijit/form/Form" id="myForm" jsId="myForm" encType="multipart/form-data"
+	action="" method="" >
+    <script type="dojo/method" event="onReset">
+        return confirm('Press OK to reset values');
+    </script>
+    <script type="dojo/method" event="onSubmit">
+        if (this.validate()) {
+            return confirm('Form is valid, press OK to submit');
+        } else {
+            alert('Form contains invalid data.  Please correct first');
+            return false;
+        }
+        return true;
+    </script>
+    <button dojoType="dijit/form/Button" type="submit" name="submitButton"     value="Submit">
+        Apply
+    </button>
+    <button dojoType="dijit/form/Button" type="reset">
+        Reset
+    </button>
+    <fieldset>
+		<legend>Common properties </legend>
+		<table style="border: none" cellspacing="10">
+			<tr>
+				<td><label for="name">
+						Name:</label>
+				</td>
+				<td><input type="text" id="name" name="name" required="true" dojoType="dijit/form/ValidationTextBox"	></input></td>
+			</tr>
+			<tr>
+				<td><label class="" for="icon">icon</label>            </td>
+				<td><img src="http://upload.wikimedia.org/wikipedia/commons/f/fd/Ghostscript_Tiger.svg" width="400" height="350" /></td>
+			</tr>
+		</table>
+	</fieldset>
+</div>
+	</body>
+</html>
