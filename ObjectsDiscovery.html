@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dash studio demo - OSIoT</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <style type="text/css">
+        @import "libcommon/DTK/dijit/themes/claro/claro.css";
+        @import "style.css";
+        form input[type='text']{width:80%}
+        form input[type='submit']{width:10%}
+    </style>
+    <script type="text/javascript"	src="libcommon/DTK/dojo/dojo.js"
+            data-dojo-config="async:1, isDebug:1, parseOnLoad: true,paths:{ lib: '../../../lib' }"
+            ></script>
+    <script type="text/javascript" >
+require(
+[	"dojo/query","dojo/request/xhr"
+,   "dojo/parser"
+,   "dijit/layout/BorderContainer"
+,   "dijit/layout/TabContainer"
+,   "dijit/layout/ContentPane"
+,   "dijit/Tree"
+,   "dijit/tree/dndSource"
+,   "dijit/layout/AccordionContainer"
+,   "dijit/form/Form"
+,   "dijit/form/Button"
+,   "dijit/form/ValidationTextBox"
+,   "dijit/form/DateTextBox"
+        //    ,	"dojox/mobile/parser","dojox/mobile","dojox/mobile/compat"
+//    ,"dojox/mobile/RoundRectList","dojox/mobile/RoundRectStoreList"
+//                    ,	"../VStoreList.js"
+//                    ,	"dojox/mobile/View"
+], function( $, xhr )
+{
+    $("form").on("submit",function()
+    {
+        xhr( $("form .url").val()).then( function(o)
+        {
+
+        })
+    });
+
+});
+    </script>
+
+</head>
+<body class="claro"><div class="demoLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
+        <div class="centerPanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center', tabPosition: 'top'">
+            <div class="demoLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
+                <div class="centerPanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top', splitter: true, tabPosition: 'top'"
+                     style="height: 30%" >
+                    <div dojoType="dijit/layout/ContentPane" href="blank.html" ></div>
+                </div>
+                <div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'"
+                        ><div dojoType="dijit/layout/ContentPane" href="blank.html" >Object(s) properties</div></div>
+            </div>
+
+        </div>
+        <div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
+            <form>
+                <input type="submit" value="Get objects from URL"/>
+                <input type="text"
+                       value="http://smartobjectservice.com:8000/"
+                       class="url"
+                       placeholder="http://myobjects.com/list"
+                       title="URL for object hierarchy retrieval" />
+            </form>
+
+        </div>
+        <div id="leftCol" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', splitter: true"
+                ><div dojoType="dijit/layout/ContentPane" href="ObjectTypesNavigator.html" ></div></div>
+    </div>
+
+</body>
+</html>
