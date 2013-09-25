@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title title="Navigate and edit objects tree" >Objects Navigator</title>
+        <link rel="stylesheet" href="libcommon/DTK/dijit/themes/claro/claro.css" media="screen">
+        <script type="text/javascript"	src="libcommon/DTK/dojo/dojo.js"
+                data-dojo-config="async:1, isDebug:1, parseOnLoad: true,paths:{ lib: '../../../lib' }"
+                ></script>
+		<script>
+            require(["lib/XmlStoreXPath","lib/AccordionTree","dijit/Tree","dijit/tree/ForestStoreModel","dijit/tree/TreeStoreModel","dijit/tree/dndSource","dijit/tree/TreeStoreModel"]);
+
+		</script>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body class="claro" >
+
+		<div data-dojo-type="lib/XmlStoreXPath"   data-dojo-id="ObjectsTreeStore"
+			 data-dojo-props="url:'ObjectTree.xml',label:'text',attributeMap:{'text':'@name'}" >
+		</div>
+		
+		<div dojoType="dijit/tree/ForestStoreModel" jsId="ObjectsTreeModel"			store="ObjectsTreeStore" query="{XPath:'/root/*'}" childrenAttrs="childNodes" ></div>
+
+		<div dojoType="dijit/layout/ContentPane" title="container for Accordion" style="height:100%;padding:0">
+			<div data-dojo-type="lib/AccordionTree" id="AccordionTree1" data-dojo-props="model:ObjectsTreeModel"
+				 style="height: 500px;"></div>	
+		</div>	
+
+	</body>
+</html>

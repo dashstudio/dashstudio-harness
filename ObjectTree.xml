@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : ObjectTree.xml
+    Created on : 2011-11-05
+    Author     : Sasha Firsov
+    Description:
+        Test hierarchical data 
+-->
+
+
+<root name="root Object Tree">
+	<AA name="AA Sample objects" >
+		<BB name="BB folder" >
+			<CC name="CC leaf" />
+			<CC name="CC Folder">
+				<DD name="DD leaf"/>
+			</CC>
+		</BB>
+		<BB name="BB1 leaf"/>
+		<userManagement name="User Management">
+			<groups name="Groups" >
+				<group name="friends">
+					<member	name="anonymous" />
+				</group>
+				<group name="milleniums">
+					<subgroup name="Hindu">
+						<member	name="Shiva"/>
+					</subgroup>
+					<subgroup name="Olimp">
+						<member	name="Zeus"/>
+					</subgroup>
+					<member	name="Plato" />
+				</group>
+				<group name="admins">
+					<subgroup name="BARCLAYS">
+						<member	name="13th cardinal"/>
+					</subgroup>
+				</group>
+			</groups>
+			<users name="Users">
+				<shop name="iPet Shop">
+					<user name="Ellina"	/>
+					<user name="Bob"	/>
+				</shop>
+			</users>
+			<permissions name="Permission">
+				<permission name="VIrtU72YOb*Jill@sleET64" />
+			</permissions>
+		</userManagement>
+	</AA>
+	<pages name="Pages" description="Pages list">
+		<dashboard	name="dashboard"	description="Dashboard page is default UI for user" />
+	</pages>
+
+	<locales name="Locales" description="Locales as language dialects specific to area, nationality or cohort which have specific dictionary.">
+		<us name="en-us" description="english USA"/>
+	</locales>
+	<images name="Images" >
+		<img name="Tiger" src="http://croczilla.com/bits_and_pieces/svg/samples/tiger/tiger.svg" description="Tiger" />
+	</images>
+	<uiRoles name="UI roles" >
+		<developer	name="Developer"		description="UI designer and front-end developer"		/>
+		<web		name="Admin"			description="Web admin"	/>
+		<user		name="User"				description="End user"		/>
+	</uiRoles>
+</root>
