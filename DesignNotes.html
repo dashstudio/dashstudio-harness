@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Dash studio demo - OSIoT</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<style type="text/css">
+		@import "libcommon/DTK/dijit/themes/claro/claro.css";
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+
+	</style>
+	<script type="text/javascript"	src="libcommon/DTK/dojo/dojo.js"
+			data-dojo-config="async:1, isDebug:1, parseOnLoad: true,paths:{ lib: '../../../lib' }"
+			></script>
+	<script type="text/javascript" >
+		require(["dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/AccordionContainer", "dijit/layout/ContentPane", "dijit/layout/AccordionPane"]);
+	</script>
+
+</head>
+<body class="claro">
+
+<h1>Design notes</h1>
+<h2>Main UI components</h2>
+<ol>
+	<li>XmlStore as primary data and metadata model</li>
+	<li>Structure tree as AccordionTree to be primary navigation over model.</li>
+	<li>Application Toolbar/menu for model saving and history. </li>
+	<li>XML node edit panel</li>
+	<li>View control panel to&nbsp; switch between view modes and options. Defines 
+		default state parameters for view</li>
+	<li>View panel. The ultimage goal of Dash Studio</li>
+</ol>
+<h2>Main back-end components</h2>
+<ol>
+	<li>User management: create w/ name&amp;password, update password</li>
+	<li>XML save (into user namespace, use pw validation )</li>
+	<li>File upload/folder/file management</li>
+	<li>directory listing by http server</li>
+</ol>
+
+<h2>Flows</h2>
+<h3>Page Load</h3>
+<ol>
+	<li>
+		<h4>XML is a primary app entry URL.</h4>
+		Hash and request parameters define the current 
+			selection and panels presentation along with view options
+		</li>
+	<li>
+		<h4>The page HTML is rendered by primary XSLT</h4>
+		The JS and dependent resources are picked from HTML header. Mostly via AMD. 
+		XSLT is not used on this stage of development to render the individual HTML peaces.
+		</li>
+	<li>
+		<h4>URL hash(#) and parameters</h4>
+		Used to set the current node selection and views.
+		</li>
+</ol>
+
+<h3>Page Save/export</h3>
+<ol>
+	<li>
+		<h4>Save</h4>
+		Xml is saved in user space with date-time stamp. History to be preserved along with save comments and tags to be visible in listing. <br />
+		The default "anonymous" user is used by contributors team and read-only for public.<br />
+		Loaded from someone's space XML could be saved under another user name. The password will be verified to avoid intrusion into foreigh space.<br />
+		Browser's "save" to file should give the ability to clone the view locally and copy to another web site.
+		</li>
+	<li>
+		<h4>Export</h4>
+		Whole page along with embedded Xml and UI(including images and animations) could be is saved and exported to be distributed onto embedded hardware.<br />
+		Optimization and scrambling options.<br />
+		Subject for premium licensing?
+		</li>
+	<li>
+		<h4>Branding</h4>
+		TBD. The custom logos, domain, etc. <br />
+		</li>
+
+</ol>
+<fieldset>
+	<legend><h3>XML navigation</h3></legend>
+	<ol>
+		<li>
+			<h4>Accordion Tab | node selection</h4>
+			URL Hash(#) to be updates to match current path in XML
+			</li>
+		<li>
+			<h4>populate Main UI components</h4>
+			The XML node edit, view control and view panel. Perhaps only if visible.</li>
+	</ol>
+</fieldset>
+<fieldset>
+	<legend><h3>XML edit</h3></legend>
+	<ol>
+		<li>
+			<h4>Data sync</h4>
+			The edit form(s) will sync its content to model in unified way, rendering 
+			updated/inserted/deleted events on impacted model subtree. 
+			</li>
+		<li>
+			<h4>Changes propagation</h4>
+			Listeners would be notified to update its status. <br />
+			The Structure tree to be updated accordingly.<br />
+			The view panel TBD. Perhaps by "refresh" or toggle to view</li>
+	</ol>
+</fieldset>
+</body>
+</html>
